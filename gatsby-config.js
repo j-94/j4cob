@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Portfolio by Jacob`,
     name: `J4cob`,
-    siteUrl: `www.j4cob.com`,
+    siteUrl: `https://www.j4cob.com`,
     description: `Jacob Sedgwick is a junior full-stack React developer and cyber security evangelist`,
     hero: {
       heading: `Welcome to J4cob.com portfolio.`,

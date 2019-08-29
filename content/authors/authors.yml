@@ -1,8 +1,7 @@
-- name: Dennis Brotzky
+- name: Jacob Sedgwick
   bio: |
-    Written by You. This is where your author bio lives. Share your work, your
-    joys and of course, your Twitter handle.
-  avatar: ./avatars/dennis-brotzky.jpg
+    Full-stack React developer and cyber security evangelist
+  avatar: ./avatars/Jacob-sedgwick.png
   featured: true
   social:
     - name: github

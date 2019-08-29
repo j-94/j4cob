@@ -1,37 +1,46 @@
+require("dotenv").config();
+
 module.exports = {
   siteMetadata: {
-    title: `Novela by Narative`,
-    name: `Narative`,
-    siteUrl: `https://novela.narative.co`,
-    description: `This is my description that will be used in the meta tags and important for search results`,
+    title: `Portfolio by Jacob`,
+    name: `J4cob`,
+    siteUrl: `www.j4cob.com`,
+    description: `Jacob Sedgwick is a junior full-stack React developer and cyber security evangelist`,
     hero: {
-      heading: `Welcome to Novela, the simplest way to start publishing with Gatsby.`,
-      maxWidth: 652,
+      heading: `Welcome to J4cob.com portfolio.`,
+      maxWidth: 652
     },
     social: [
       {
         name: `twitter`,
-        url: `https://twitter.com/narative`,
+        url: `https://twitter.com/`
       },
       {
         name: `github`,
-        url: `https://github.com/narative`,
+        url: `https://github.com/`
       },
       {
         name: `instagram`,
-        url: `https://instagram.com/narative.co`,
+        url: `https://instagram.com/`
       },
       {
         name: `linkedin`,
-        url: `https://www.linkedin.com/company/narative/`,
+        url: `https://www.linkedin.com/company/`
       },
       {
         name: `dribbble`,
-        url: `https://dribbble.com/narativestudio`,
-      },
-    ],
+        url: `https://dribbble.com/`
+      }
+    ]
   },
   plugins: [
+    {
+      resolve: "gatsby-source-contentful",
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+      }
+    },
     {
       resolve: "@narative/gatsby-theme-novela",
       options: {
@@ -41,21 +50,21 @@ module.exports = {
         authorsPage: true,
         sources: {
           local: true,
-          // contentful: true,
-        },
-      },
+          contentful: true
+        }
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Novela by Narative`,
-        short_name: `Novela`,
+        name: `Portfolio by Jacob`,
+        short_name: `J4cob`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#fff`,
         display: `standalone`,
-        icon: `src/assets/favicon.png`,
-      },
-    },
-  ],
+        icon: `src/assets/favicon.png`
+      }
+    }
+  ]
 };

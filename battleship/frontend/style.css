@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#game-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+#game-setup, #game-info, #ship-placement-ui {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#game-setup div {
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#status-message {
+    font-weight: bold;
+    color: #17a2b8;
+}
+
+#grids-container {
+    display: flex; /* Will be changed to flex by JS when game starts */
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.grid-area {
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    border: 1px solid #aaa;
+    width: 300px; /* 10 * 30px */
+    height: 300px; /* 10 * 30px */
+    margin: 0 auto; /* Center grid if its container is wider */
+}
+
+.grid-cell {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px; /* For hit/miss markers */
+    background-color: #e9ecef; /* Default empty cell */
+}
+
+/* Cell states for player's own grid */
+.grid-cell.ship {
+    background-color: #6c757d; /* Ship visible */
+}
+.grid-cell.hit {
+    background-color: #dc3545; /* Hit marker */
+    color: white;
+}
+.grid-cell.miss {
+    background-color: #ffc107; /* Miss marker */
+    color: black;
+}
+
+/* Cell states for opponent's grid (where player clicks to fire) */
+#opponent-grid .grid-cell:hover {
+    background-color: #cfe2ff;
+    cursor: pointer;
+}
+#opponent-grid .grid-cell.hit {
+    background-color: #dc3545;
+}
+#opponent-grid .grid-cell.miss {
+    background-color: #ffc107;
+}
+#opponent-grid .grid-cell.fired { /* Cell already fired upon */
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Hide elements initially */
+#ship-placement-ui, #grids-container {
+    display: none;
+}

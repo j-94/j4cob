@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Battleship</h1>
+
+        <div id="game-setup">
+            <button id="create-game-btn">Create New Game</button>
+            <div>
+                <input type="text" id="game-id-input" placeholder="Enter Game ID to Join">
+                <button id="join-game-btn">Join Game</button>
+            </div>
+        </div>
+
+        <div id="game-info">
+            <p>Your Player ID: <span id="player-id-display">-</span></p>
+            <p>Game ID: <span id="game-id-display">-</span></p>
+            <p>Status: <span id="status-message">Welcome! Create or join a game.</span></p>
+        </div>
+
+        <div id="ship-placement-ui" style="display: none;">
+            <h2>Ship Placement</h2>
+            <p>Place your ships! (Simplified for now - ships will be auto-placed or use a basic scheme).</p>
+            <button id="ready-btn">Ready to Start</button>
+            <!-- More complex ship placement UI would go here -->
+        </div>
+
+        <div id="grids-container" style="display: none;">
+            <div class="grid-area">
+                <h3>Your Board</h3>
+                <div id="player-grid" class="grid"></div>
+            </div>
+            <div class="grid-area">
+                <h3>Opponent's Board</h3>
+                <div id="opponent-grid" class="grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
